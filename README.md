@@ -42,6 +42,7 @@ mysql> source ./scripts/restart.sql
 mysql> source ./scripts/HackerRank-Occupations.sql
 mysql> source ./scripts/HackerRank-TypeOfTriangle.sql
 mysql> source ./scripts/HackerRank-TopEarners.sql
+mysql> source ./scripts/HackerRank-ThePADS.sql
 ```
 
 ## Gotcha's and Review Topics

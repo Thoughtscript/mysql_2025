@@ -1,4 +1,4 @@
--- https://www.hackerrank.com/challenges
+-- https://www.hackerrank.com/challenges/occupations
 -- Medium 30
 
 DROP TABLE IF EXISTS Occupations;
@@ -11,7 +11,7 @@ CREATE TABLE Occupations(
 INSERT INTO Occupations 
 VALUES 
     ('Samantha', 'Doctor'),
-       ('Julia', 'Actor'),
+    ('Julia', 'Actor'),
     ('Maria', 'Actor'),
     ('Meera', 'Singer'),
     ('Ashely', 'Professor'),

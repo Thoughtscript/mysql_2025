@@ -23,6 +23,7 @@ VALUES
     (98607, 'Todd',     5,    3396),
     (99989, 'Joe',      9,    3573);
 
+-- This syntax is prohibited in HackerRank since it uses MySQL <8.0
 WITH t AS (
   SELECT months*salary AS earnings, employee_id
   FROM Employee
@@ -32,3 +33,19 @@ FROM t
 GROUP BY earnings
 ORDER BY earnings DESC
 LIMIT 1;
+
+/*
+SELECT earnings, Count(employee_id)
+FROM (SELECT months*salary AS earnings, employee_id FROM Employee) AS t
+GROUP BY earnings
+ORDER BY earnings DESC
+LIMIT 1;
+*/
+
+/*
+ +----------+--------------------+ 
+ | earnings | Count(employee_id) |
+ +----------+--------------------+
+ |    69952 |                  1 |
+ +----------+--------------------+
+*/
