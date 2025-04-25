@@ -1,0 +1,18 @@
+services:
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: dockerfile
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=example
+      - MYSQL_PASSWORD=example
+      - MYSQL_DATABASE=lab
+    networks:
+      - testnet
+
+networks:
+  testnet:
+    driver: bridge

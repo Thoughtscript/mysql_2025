@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS Occupations;
+DROP TABLE IF EXISTS Triangles;
