@@ -43,6 +43,8 @@ mysql> source ./scripts/HackerRank-Occupations.sql
 mysql> source ./scripts/HackerRank-TypeOfTriangle.sql
 mysql> source ./scripts/HackerRank-TopEarners.sql
 mysql> source ./scripts/HackerRank-ThePADS.sql
+mysql> source ./scripts/HackerRank-NewCompanies.sql
+mysql> source ./scripts/HackerRank-WeatherStation20.sql
 ```
 
 ## Gotcha's and Review Topics
