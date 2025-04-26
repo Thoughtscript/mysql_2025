@@ -1,6 +1,6 @@
 -- https://www.hackerrank.com/challenges/interviews
 
--- Probably the most difficult SQL problem on HackerRank as of 4.25.2025
+-- Apparently among the most difficult SQL problems on HackerRank as of 4.25.2025
 
 -- Hard: 50
 

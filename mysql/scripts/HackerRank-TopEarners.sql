@@ -35,17 +35,25 @@ ORDER BY earnings DESC
 LIMIT 1;
 
 /*
++----------+--------------------+
+| earnings | Count(employee_id) |
++----------+--------------------+
+|    69952 |                  1 |
++----------+--------------------+
+1 row in set (0.00 sec)
+*/
+
 SELECT earnings, Count(employee_id)
 FROM (SELECT months*salary AS earnings, employee_id FROM Employee) AS t
 GROUP BY earnings
 ORDER BY earnings DESC
 LIMIT 1;
-*/
 
 /*
- +----------+--------------------+ 
- | earnings | Count(employee_id) |
- +----------+--------------------+
- |    69952 |                  1 |
- +----------+--------------------+
++----------+--------------------+
+| earnings | Count(employee_id) |
++----------+--------------------+
+|    69952 |                  1 |
++----------+--------------------+
+1 row in set (0.00 sec)
 */
