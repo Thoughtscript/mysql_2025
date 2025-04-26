@@ -44,9 +44,11 @@ mysql> source ./scripts/HackerRank-TypeOfTriangle.sql
 mysql> source ./scripts/HackerRank-TopEarners.sql
 mysql> source ./scripts/HackerRank-ThePADS.sql
 mysql> source ./scripts/HackerRank-NewCompanies.sql
+mysql> source ./scripts/HackerRank-WeatherStation8.sql
 mysql> source ./scripts/HackerRank-WeatherStation18.sql
 mysql> source ./scripts/HackerRank-WeatherStation19.sql
 mysql> source ./scripts/HackerRank-WeatherStation20.sql
+mysql> source ./scripts/HackerRank-Interviews.sql
 ```
 
 ## Gotcha's and Review Topics

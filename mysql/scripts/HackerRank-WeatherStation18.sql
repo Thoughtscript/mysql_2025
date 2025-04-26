@@ -40,7 +40,7 @@ FROM
     (SELECT LAT_N FROM Station ORDER BY LAT_N ASC LIMIT 1) AS a,
     (SELECT LONG_W FROM Station ORDER BY LONG_W ASC LIMIT 1) AS b,
     (SELECT LAT_N FROM Station ORDER BY LAT_N DESC LIMIT 1) AS c,
-    (SELECT LONG_W FROM Station ORDER BY LONG_W DESC LIMIT 1) AS d
+    (SELECT LONG_W FROM Station ORDER BY LONG_W DESC LIMIT 1) AS d;
 
 /*
 +-------------------------------------------------------------+
@@ -48,4 +48,26 @@ FROM
 +-------------------------------------------------------------+
 |                                                         231 |
 +-------------------------------------------------------------+
+1 row in set (0.00 sec)
+*/
+
+SELECT 
+    -- In a plane with p1 at (x1, y1) and p2 at (x2, y2): |x1 - x2| + |y1 - y2|.
+    ROUND(ABS(x.a - x.c) + ABS(x.b - x.d), 4)
+    
+FROM 
+    (SELECT 
+        MIN(LAT_N) AS a,
+        MIN(LONG_W) AS b,
+        MAX(LAT_N) AS c,
+        MAX(LONG_W) AS d
+     FROM Station) as x;
+
+/*
++-------------------------------------------+
+| ROUND(ABS(x.a - x.c) + ABS(x.b - x.d), 4) |
++-------------------------------------------+
+|                                       231 |
++-------------------------------------------+
+1 row in set (0.00 sec)
 */
