@@ -162,6 +162,7 @@ ORDER BY c.contest_id ASC;
 3 rows in set (0.00 sec)
 */
 
+-- This one's more readable but is apparently about as fast as the above.
 SELECT 
     c.contest_id,
     c.hacker_id,
