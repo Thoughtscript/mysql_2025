@@ -1,6 +1,6 @@
 -- https://www.hackerrank.com/challenges/interviews
 -- Apparently among the most difficult SQL problems on HackerRank as of 4.25.2025
--- Hard: 50
+-- Hard 50
 
 DROP TABLE IF EXISTS Contests;
 

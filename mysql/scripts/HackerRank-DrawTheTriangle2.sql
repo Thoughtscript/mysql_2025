@@ -1,5 +1,5 @@
 -- https://www.hackerrank.com/challenges/draw-the-triangle-2
--- Easy: 25
+-- Easy 25
 
 WITH RECURSIVE p_tri (n) AS
 (

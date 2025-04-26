@@ -53,6 +53,7 @@ mysql> source ./scripts/HackerRank-WeatherStation20.sql
 mysql> source ./scripts/HackerRank-Interviews.sql
 mysql> source ./scripts/HackerRank-DrawTheTriangle1.sql
 mysql> source ./scripts/HackerRank-DrawTheTriangle2.sql
+mysql> source ./scripts/HackerRank-SymmetricPairs.sql
 ```
 
 ## Gotcha's and Review Topics
