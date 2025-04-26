@@ -159,4 +159,57 @@ ORDER BY c.contest_id ASC;
 |      66556 |     79153 | Angela |                0 |                        0 |         11 |               10 |
 |      94828 |     80275 | Frank  |              150 |                       38 |         41 |               15 |
 +------------+-----------+--------+------------------+--------------------------+------------+------------------+
+3 rows in set (0.00 sec)
+*/
+
+SELECT 
+    c.contest_id,
+    c.hacker_id,
+    c.name,
+    IFNULL(SUM(s.totalSubmissions), 0) AS totalSubmissions,
+    IFNULL(SUM(s.totalAcceptedSubmissions), 0) AS totalAcceptedSubmissions,
+    IFNULL(SUM(v.totalViews), 0) AS totalViews,
+    IFNULL(SUM(v.totalUniqueViews), 0) AS totalUniqueViews
+    
+FROM 
+    Contests AS c
+    INNER JOIN Colleges AS col ON c.contest_id = col.contest_id
+    INNER JOIN Challenges AS chal ON chal.college_id = col.college_id
+
+    LEFT JOIN (SELECT challenge_id,
+        SUM(total_views) AS totalViews,
+        SUM(total_unique_views) AS totalUniqueViews
+    FROM View_Stats
+    GROUP BY challenge_id) AS v 
+    ON chal.challenge_id = v.challenge_id
+    
+    LEFT JOIN (SELECT challenge_id,
+        SUM(total_submissions) AS totalSubmissions,
+        SUM(total_accepted_submissions) AS totalAcceptedSubmissions
+    FROM Submission_Stats
+    GROUP BY challenge_id) AS s
+    ON chal.challenge_id = s.challenge_id
+
+GROUP BY
+    c.contest_id,
+    c.hacker_id,
+    c.name
+
+HAVING
+    totalSubmissions > 0
+    OR totalAcceptedSubmissions > 0
+    OR totalViews > 0
+    OR totalUniqueViews > 0
+
+ORDER BY c.contest_id ASC;
+
+/*
++------------+-----------+--------+------------------+--------------------------+------------+------------------+
+| contest_id | hacker_id | name   | totalSubmissions | totalAcceptedSubmissions | totalViews | totalUniqueViews |
++------------+-----------+--------+------------------+--------------------------+------------+------------------+
+|      66406 |     17973 | Rose   |              111 |                       39 |        156 |               56 |
+|      66556 |     79153 | Angela |                0 |                        0 |         11 |               10 |
+|      94828 |     80275 | Frank  |              150 |                       38 |         41 |               15 |
++------------+-----------+--------+------------------+--------------------------+------------+------------------+
+3 rows in set (0.00 sec)
 */
