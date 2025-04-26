@@ -2,6 +2,8 @@
 
 [![](https://img.shields.io/badge/MySQL-8.4.5-blue.svg)](https://dev.mysql.com/doc/refman/8.4/en/preface.html)
 
+> *Just some fun. (And going for [SQL Gold](https://www.hackerrank.com/profile/KardashevScale) on Hacker Rank.)*
+
 ## Setup and Use
 
 Docker Compose:
